@@ -4,6 +4,7 @@
 ```shell
 # clone this repo:
 git clone https://github.com/descon-uccs/CS5720-Project1-Fall2024.git
+cd CS5720-Project1-Fall2024
 
 # generate the figure files:
 python third_code.py
