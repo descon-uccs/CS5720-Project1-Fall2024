@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+
+\title{Empirical Analysis of Brute-Force Search Algorithm}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\tableofcontents
+	
+	\newpage
+	
+	\section{Introduction}
+	The purpose of this project is to empirically analyze the time complexity of a brute-force search algorithm in terms of its worst-case, best-case, and average-case performance. The analysis is conducted using various sizes of character arrays derived from an English text and the algorithm is tested for different search characters (`e`, `m`, `Q`, and `%`). We provide insights into the runtime of the algorithm and conjecture about the algorithm’s complexity based on the empirical results.
+	
+	\section{Methodology}
+	
+	\subsection{Search Algorithm}
+	We implemented a brute-force search algorithm that takes a character array \( A[n] \) and a search key \( K \). The algorithm returns the lowest index in \( A \) where \( K \) appears or \( n \) if \( K \) is not found. 
+	
+	\subsection{Dataset Generation}
+	To generate datasets for the empirical analysis, we used a public domain English text (``Pride and Prejudice'' by Jane Austen) downloaded from Project Gutenberg. The text was cleaned and split into character arrays of varying lengths (1000, 2000, ..., 10000). For each array length \( n \), 50 arrays were generated.
+	
+	\subsection{Runtime Analysis}
+	We ran the search algorithm on the generated datasets for the characters `e`, `m`, `Q`, and `%`. For each test character and array size, we measured the worst-case, best-case, and average-case runtimes. The runtime is defined as the number of iterations (i.e., the index where the key is found or \( n \) if not found).
+	
+	\newpage
+	
+	\section{Results}
+	
+	\subsection{Worst-Case Runtime}
+	The worst-case runtime occurs when the search key is either found at the last index of the array or is not present. Below are the plots for the worst-case runtimes for each test character.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysise.pdf}
+		\caption{Worst-case runtime for character `e`.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysism.pdf}
+		\caption{Worst-case runtime for character `m`.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysisQ.pdf}
+		\caption{Worst-case runtime for character `Q`.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysispercent.pdf}
+		\caption{Worst-case runtime for character `\%`.}
+	\end{figure}
+	
+	\subsection{Best-Case Runtime}
+	The best-case runtime occurs when the search key is found at the first index of the array.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysise.pdf}
+		\caption{Best-case runtime for character `e`.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysism.pdf}
+		\caption{Best-case runtime for character `m`.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysisQ.pdf}
+		\caption{Best-case runtime for character `Q`.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{runtimeanalysispercent.pdf}
+		\caption{Best-case runtime for character `\%`.}
+	\end{figure}
+	
+	\newpage
+	
+	\section{Conclusion}
+	This project provided an empirical analysis of a brute-force search algorithm. The worst-case, best-case, and average-case runtimes were measured for different search keys across varying array sizes. Our findings are consistent with the theoretical time complexities:
+	
+	\begin{itemize}
+		\item Worst-case runtime: \( O(n) \)
+		\item Best-case runtime: \( O(1) \)
+		\item Average-case runtime: \( O(n) \)
+	\end{itemize}
+	
+	The results reinforce the understanding of brute-force search algorithms and their performance characteristics.
+	
+\end{document}
